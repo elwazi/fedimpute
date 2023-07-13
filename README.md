@@ -11,7 +11,7 @@ We are going to run the following pipelines through GA4GH services.
 ### Workflow architecture
 The workflow is running under GA4GH services, the workflow architecture is described in following diagram:
 
-![Workflow architecture diagram](![FedImpute1](https://github.com/elwazi/fedimpute/assets/138137237/1c06ad15-76f6-4f92-b44c-125aaf2c2b3a)
+![Workflow architecture diagram](https://github.com/elwazi/fedimpute/assets/138137237/d46e4fd2-9fed-412c-b018-0084eb7fa4f7)
 
 ### Pipeline workflow
 The basic steps of the pipeline is described in the diagram below:
