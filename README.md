@@ -13,9 +13,9 @@ The workflow is running under GA4GH services, the workflow architecture is descr
 
 ![Workflow architecture diagram](https://github.com/elwazi/fedimpute/assets/138137237/d46e4fd2-9fed-412c-b018-0084eb7fa4f7)
 
-● Deployed the Starter Kit DRS and two Starter Kits WES containers.
-● Loaded a subset of 1000 Genomes Sample data into the Starter Kit DRS
-● Execute Nextflow Workflow on a DRS object using both Starter Kits WES.
+● Deployed the Starter Kit DRS and two Starter Kits WES containers. </br>
+● Loaded a subset of 1000 Genomes Sample data into the Starter Kit DRS. </br>
+● Execute Nextflow Workflow on a DRS object using both Starter Kits WES. </br>
 
 
 ### Pipeline workflow
