@@ -29,14 +29,13 @@ Here we are going to run it through GA4GH services.
 ### Documentation
 The h3achipimputation pipeline comes with documentation about the pipeline, found in the `docs/` directory:
 
-1. [Installation](docs/installation.md)
-2. [Pipeline configuration](docs/configuration/config_files.md)  
-    2.1. [Configuration files](docs/configs.md)  
-    2.2. [Software requirements](docs/soft_requirements.md)  
-    2.3. [Other clusters](docs/other_clusters.md)  
-3. [Running the pipeline](docs/usage.md)
-4. [Output and how to interpret the results](docs/output.md)
-<!-- 5. [Troubleshooting](troubleshooting.md) -->
+1. [Pipeline configuration](docs/configuration/config_files.md)  
+    1.1. [Configuration files](docs/configs.md)  
+    1.2. [Software requirements](docs/soft_requirements.md)  
+    1.3. [Other clusters](docs/other_clusters.md)  
+2. [Running the pipeline](docs/usage.md)
+3. [Output and how to interpret the results](docs/output.md)
+<!-- 4. [Troubleshooting](troubleshooting.md) -->
 
 ### Getting started
 
