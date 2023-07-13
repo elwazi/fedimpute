@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-cd /cbio/users/mamana
-
 nextflow \
-  run /users/mamana/federated-imputation/main.nf \
-  -c /users/mamana/federated-imputation/conf/test_b38.config \
+  run elwazi/fedimpute/main.nf -r main \
+  -c conf/test_b38.config \
   -resume -profile slurm,singularity
