@@ -169,7 +169,7 @@ workflow postprocess{
         data
             .groupTuple( by:[0,3,4,7] )
         // Create a dataflow instance of all impute results
-        imputeCombine = data.view()
+        imputeCombine = data
             .groupTuple( by:[0,3,4,7] ) // combine by chrom, dataset, refpanel, chip
             .map{ chrm, starts, ends, dataset, ref_name, imputed_vcfs, imputed_infos, tagName -> [ dataset, ref_name, chrm, imputed_vcfs  ] }
         infoCombine = data
@@ -231,7 +231,7 @@ workflow localimpute {
     take: target_data
     main:
         /* Imputation */
-        impute(target_data).view()
+        impute(target_data)
 
         /* Post processing */
         // postprocess(impute.out.chunks_imputed)
@@ -246,7 +246,7 @@ workflow michiganimpute {
     take: target_data
     main:
         /* Imputation */
-        impute(target_data).view()
+        impute(target_data)
 
         /* Post processing */
         // postprocess(impute.out.chunks_imputed)
