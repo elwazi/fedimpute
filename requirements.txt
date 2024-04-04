@@ -1,3 +1,4 @@
 pandoc
 pandas
 papermill
+jupyter
