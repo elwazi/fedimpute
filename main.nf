@@ -48,17 +48,15 @@ process make_report {
     publishDir "$RES_DIR", mode: 'copy', overwrite: true
     
     input:
-        val samplefiles
+        tuple val(samplefiles), path(html_report), path(javascript)
 
     output:
-        path "*.html" 
-        path "*.js" 
+        tuple path("*.html"), path("index.js")
+        
 
     script:
     """
     make_report.py --samples ${samplefiles.join(" ")} --output sample_memberships.html
-    cp ${projectDir}/assets/html/report.html report.html
-    cp ${projectDir}/assets/js/index.js .
     """
 }
 
@@ -114,14 +112,26 @@ workflow {
     
     ch_samples = count_samples(ch_vcfs)
 
-    ch_template = Channel.fromPath('assets/notebooks/plot_allelefreqs.ipynb')
+    // ch_template = Channel.fromPath('assets/notebooks/plot_allelefreqs.ipynb')
+    ch_template = Channel.fromPath("${workflow.projectDir}/assets/notebooks/plot_allelefreqs.ipynb")//.view()
     
-    //ch_vcfs.combine(ch_template).view()
+    
+    // ch_vcfs.combine(ch_template).view()
+
+
     ch_plots = plot_allelefreqs(ch_vcfs.combine(ch_template))
 
-    // ch_samples.collect().view()
+    ch_fancychannel = ch_samples.map{it -> ["sample",it]}.groupTuple().map{it-> [it[1]]}
+        .combine([["${workflow.projectDir}/assets/html/report.html",
+        "${workflow.projectDir}/assets/js/index.js"]]).view()
+
     //reflect(ch_samples.toSortedList())
-    make_report(ch_samples.toSortedList())
+    
+    
+    // make_report(ch_samples.toSortedList())
+     make_report(ch_fancychannel)
+
+
 
     // ch_notebook = Channel.fromPath('./analyses/01_generate_data.ipynb')
     // generate_data(ch_notebook) | countlines | view { "directory contents: $it" }
