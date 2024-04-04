@@ -2,6 +2,7 @@
 RES_DIR = params.resultsDir
 
 process count_samples {
+    label 'bcftools'
     def id = "01_count_samples"
     publishDir "$RES_DIR/$id", mode: 'copy', overwrite: true
 
