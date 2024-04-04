@@ -1,5 +1,13 @@
-*.log
+*.log*
+logs/*
+.envrc
 .nextflow
+.direnv/*
 work/
-data/input/*
-data/output/*
+input/*
+output/*
+.gitattributes
+stashed
+data/*
+docs/devnotes.md
+**/.ipynb_checkpoints
