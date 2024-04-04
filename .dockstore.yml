@@ -4,3 +4,6 @@ workflows:
   - subclass: NFL
     primaryDescriptorPath: /nextflow.config
     publish: True
+    authors: 
+    - name: Ayton Meinjes
+    - name: Mamana Mbiyavanga
