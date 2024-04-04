@@ -13,9 +13,10 @@
 git clone git@github.com:elwazi/fedimpute.git
 cd fedimpute
 
-# create a virtual environment, and activate 
-# for example direnv
-echo layout python > .envrc
+# create a virtual environment, and activate it
+# for example using direnv
+echo export NXF_LOG_FILE=`pwd`"/logs/nextflow.log" > .envrc
+echo layout python >> .envrc
 direnv allow .
 
 # install the native prerequisites
